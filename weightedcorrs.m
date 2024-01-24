@@ -7,15 +7,15 @@ function [R,p,wcov,wstd] = weightedcorrs(Y, w)
 % 		R = weightedcorrs(Y)					% returns unweighted correlation matrix (same as corrcoef(Y))
 % 		R = weightedcorrs(Y,w)					% returns weighted correlation matrix of Y weighted by w
 % 		[~,p] = weightedcorrs(Y,w)				% returns p-values of the weighted correlation coefficients
-% 		[~,~,wcov] = weightedcorrs(Y,w)			% returns weighted covariance of Y weighted by w normalized to number of observations (T)
-% 		[~,~,~,wstd] = weightedcorrs(Y,w)		% returns weighted standard deviations of Y weighted by w normalized to T
-% 		[~,~,wcov,wstd] = weightedcorrs(Y)		% returns unweighted covariance and standard deviations normalized to T-1 (same as std(Y) and cov(Y))
-% 		[~,~,wcov,wstd] = weightedcorrs(Y,0)	% returns unweighted covariance and standard deviations normalized to T-1 (same as std(Y,0) and cov(Y,0))
-% 		[~,~,wcov,wstd] = weightedcorrs(Y,1)	% returns unweighted covariance and standard deviations normalized to T (same as std(Y,1) and cov(Y,1)
+% 		[~,~,wcov] = weightedcorrs(Y,w)			% returns weighted covariance of Y weighted by w normalized to number of observations (nobs)
+% 		[~,~,~,wstd] = weightedcorrs(Y,w)		% returns weighted standard deviations of Y weighted by w normalized to nobs
+% 		[~,~,wcov,wstd] = weightedcorrs(Y)		% returns unweighted covariance and standard deviations normalized to nobs-1 (same as std(Y) and cov(Y))
+% 		[~,~,wcov,wstd] = weightedcorrs(Y,0)	% returns unweighted covariance and standard deviations normalized to nobs-1 (same as std(Y,0) and cov(Y,0))
+% 		[~,~,wcov,wstd] = weightedcorrs(Y,1)	% returns unweighted covariance and standard deviations normalized to nobs (same as std(Y,1) and cov(Y,1)
 %
 %   weightedcorrs returns a symmetric matrix R of weighted Pearson correlation
-%   coefficients calculated from an input T-by-N matrix Y whose rows are
-%   observations and whose columns are variables and an input T-by-1 vector
+%   coefficients calculated from an input nobs-by-nvar matrix Y whose rows are
+%   observations and whose columns are variables and an input nobs-by-1 vector
 %   w of weights for the observations. This function may be a valid
 %   alternative to CORRCOEF if observations are not all equally relevant
 %   and need to be weighted according to some theoretical hypothesis or
@@ -23,9 +23,9 @@ function [R,p,wcov,wstd] = weightedcorrs(Y, w)
 %
 %   Input of w is optional. 
 %   If w=0, 1, or is omitted, then the function assigns w = ones(size(Y,1),1)
-%   If w=0 or omitted, the covariance and standard deviations are unweighted and normalizd to T-1
-%   If w=1, the covariance and standard deviations are unweighted and normlizd to T
-%   Otherwise, if w is an input vector of weights, then T for output of standard deviations and covariance. 
+%   If w=0 or omitted, the covariance and standard deviations are unweighted and normalizd to nobs-1
+%   If w=1, the covariance and standard deviations are unweighted and normlizd to nobs
+%   Otherwise, if w is an input vector of weights, then nobs for output of standard deviations and covariance. 
 %   If w=0 or if the input vector of w = ones(size(Y,1),1), then no difference exists between
 %   weightedcorrs(Y, w) and corrcoef(Y) (see Example 4).
 %
@@ -44,7 +44,7 @@ function [R,p,wcov,wstd] = weightedcorrs(Y, w)
 %   correlation coefficients, weighted covariance matrix, and 
 %   weighted standard deviations, and allow optional input of 
 %   weighting factors for use with unweighted analysis 
-%   or normalization to T-1
+%   or normalization to nobs-1
 %
 % ________________________________________________________________________
 
@@ -125,12 +125,12 @@ function [R,p,wcov,wstd] = weightedcorrs(Y, w)
 
 if nargin==1 | w==0
 	w = ones(size(Y,1),1);
-	df_eq_T = false;
+	df_eq_nobs = false;
 elseif w==1
 	w = ones(size(Y,1),1);
-	df_eq_T = true;
+	df_eq_nobs = true;
 else
-	df_eq_T = true;
+	df_eq_nobs = true;
 end
 
 % Check input
@@ -149,27 +149,27 @@ if ~ctrl
   error('size(Y, 1) has to be equal to length(w)!')
 end
 
-[T, N] = size(Y);                                                             % T: number of observations; N: number of variables
-temp = Y - repmat(w' * Y, T, 1);                                              % Remove mean (which is, also, weighted)
-temp = temp' * (temp .* repmat(w, 1, N));                                     % Covariance Matrix (which is weighted) (df=T)
+[nobs, nvar] = size(Y);                                                       % nobs: number of observations; nvar: number of variables
+temp = Y - repmat(w' * Y, nobs, 1);                                           % remove mean (which is, also, weighted)
+temp = temp' * (temp .* repmat(w, 1, nvar));                                  % weighted covariance matrix normalized nobs
 
-wstd = sqrt(diag(temp))';													  % weighted standard deviations (df=T)
-% standard deviations adjusted to df=T-1 if w=0 or missing
-if ~df_eq_T
-	wstd = wstd .* sqrt(T / (T-1));											  % adjust to df=T-1 if w=0 or missing
+wstd = sqrt(diag(temp))';													  % weighted standard deviations normalized to nobs
+% standard deviations adjusted to df=nobs-1 if w=0 or missing
+if ~df_eq_nobs
+	wstd = wstd .* sqrt(nobs / (nobs-1));									  % normalize to nobs-1 if w=0 or missing
 end
 
 temp = 0.5 * (temp + temp');                                                  % Must be exactly symmetric
-R = diag(temp);                                                               % weighted variances (df=T)
+R = diag(temp);                                                               % weighted variances (df=nobs)
 R = temp ./ sqrt(R * R');                                                     % Matrix of Weighted Correlation Coefficients
 
-% weighted covariance matrix (df=T-1 if w=0 or missing, otherwise df=T)
+% weighted covariance matrix (df=nobs-1 if w=0 or missing, otherwise df=nobs)
 D = diag(wstd);																  % diagonal matrix of weighted standard deviations 
 wcov = D*R*D;															  	  % weighted covariance matrix 
 
 % p-values of the correlation coefficients
-tstat = R.*sqrt((T-2)./(1-R.^2));
-s = tcdf(tstat,T-2);
+tstat = R.*sqrt((nobs-2)./(1-R.^2));
+s = tcdf(tstat,nobs-2);
 p = 2 * min(s,1-s);															  % p-values of the correlation coefficients
 
 
