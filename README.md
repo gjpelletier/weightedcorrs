@@ -1,5 +1,5 @@
 # weightedcorrs
-Python and Jupyter notebook function to calculate weighted correlation coefficients, covariance, and standard deviations
+Python, Jupyter notebook, and MATLAB function to calculate weighted correlation coefficients, covariance, and standard deviations
 
 SYNTAX
 
