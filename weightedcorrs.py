@@ -104,7 +104,7 @@ def weightedcorrs(X,w=0):
 
   return results
 
-"""Next we will show an example of using the weightedcorrs function and compare it with results from other Python libraries and MATLAB. We will need to import numpy first"""
+"""Next we will show an example of using the weightedcorrs function. We will need to import numpy first"""
 
 import numpy as np
 
