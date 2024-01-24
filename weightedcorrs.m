@@ -168,8 +168,8 @@ D = diag(wstd);																  % diagonal matrix of weighted standard deviatio
 wcov = D*R*D;															  	  % weighted covariance matrix 
 
 % p-values of the correlation coefficients
-t = R.*sqrt((T-2)./(1-R.^2));
-s = tcdf(t,T-2);
+tstat = R.*sqrt((T-2)./(1-R.^2));
+s = tcdf(tstat,T-2);
 p = 2 * min(s,1-s);															  % p-values of the correlation coefficients
 
 
