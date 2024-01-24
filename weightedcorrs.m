@@ -22,12 +22,12 @@ function [R,p,wcov,wstd] = weightedcorrs(Y, w)
 %   knowledge.
 %
 %   Input of w is optional. 
-%   If w=0, 1, or is omitted, then the function assigns w = ones(size(Y,1),1)
+%   If w=0, 1, or is omitted, then the function assigns w = ones(nobs,1)
 %   If w=0 or omitted, the covariance and standard deviations are unweighted and normalizd to nobs-1
 %   If w=1, the covariance and standard deviations are unweighted and normlizd to nobs
 %   Otherwise, if w is an input vector of weights, then nobs for output of standard deviations and covariance. 
-%   If w=0 or if the input vector of w = ones(size(Y,1),1), then no difference exists between
-%   weightedcorrs(Y, w) and corrcoef(Y) (see Example 4).
+%   If w=0 or if the input vector of w = ones(nobs,1), then there is no difference between
+%   weightedcorrs(Y, w) and corrcoef(Y).
 %
 %   REFERENCE: the mathematical formulas in matrix notation, together with
 %   the code, is also available in
