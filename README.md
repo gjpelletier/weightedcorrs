@@ -23,7 +23,7 @@ SYNTAX:
 
 List of outputs:
 
-- 'R' is the output of the weighted Pearson correlation coefficients calculated from an input nobs-by-nvar matrix X whose rows are observations and whose columns are variables and an input nobs-by-1 vector w of weights for the observations. This function may be a valid alternative to np.corrcoef if observations are not all equally relevant and need to be weighted according to some theoretical hypothesis or knowledge.
+- 'R' is the output of the weighted Pearson correlation coefficients calculated from an input nobs-by-nvar matrix X whose rows are observations and whose columns are variables and an input nobs-by-1 vector w of weights for the observations. This function may be a valid alternative to MATLAB's corrcoef if observations are not all equally relevant and need to be weighted according to some theoretical hypothesis or knowledge.
 
 - 'p' is the output of the p-values of the Pearson correlation coefficients
 
