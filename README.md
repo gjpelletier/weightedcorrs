@@ -9,8 +9,10 @@ Download weightedcorrs.m from github and add it to your working directory or ses
 
 First install weightedcorrs as follows with pip or !pip:<br>
 ```pip install git+https://github.com/gjpelletier/weightedcorrs.git```<br> 
+
 Next import the weightedcorrs function as follows:<br>
 ```from weightedcorrs import weightedcorrs```<br>
+
 As an alternative, you can also download weightedcorrs.py from github and add it to your own project.<br>
 
 # Syntax for MATLAB
