@@ -4,15 +4,15 @@ function [R,p,wcov,wstd,wmean] = weightedcorrs(Y, w)
 %	Weighted correlation coefficients, covariance, and standard deviations
 %
 % 	SYNTAX
-% 		R = weightedcorrs(Y)					% returns unweighted correlation matrix (same as corrcoef(Y))
-% 		R = weightedcorrs(Y,w)					% returns weighted correlation matrix of Y weighted by w
-% 		[~,p] = weightedcorrs(Y,w)				% returns p-values of the weighted correlation coefficients
-% 		[~,~,wcov] = weightedcorrs(Y,w)			% returns weighted covariance of Y weighted by w normalized to number of observations (nobs)
-% 		[~,~,~,wstd] = weightedcorrs(Y,w)		% returns weighted standard deviations of Y weighted by w normalized to nobs
-% 		[~,~,~,~,wmean] = weightedcorrs(Y,w)	% returns weighted means Y weighted by w
-% 		[~,~,wcov,wstd] = weightedcorrs(Y)		% returns unweighted covariance and standard deviations normalized to nobs-1 (same as std(Y) and cov(Y))
-% 		[~,~,wcov,wstd] = weightedcorrs(Y,0)	% returns unweighted covariance and standard deviations normalized to nobs-1 (same as std(Y,0) and cov(Y,0))
-% 		[~,~,wcov,wstd] = weightedcorrs(Y,1)	% returns unweighted covariance and standard deviations normalized to nobs (same as std(Y,1) and cov(Y,1)
+% 		R = weightedcorrs(Y)                    % returns unweighted correlation matrix (same as corrcoef(Y))
+% 		R = weightedcorrs(Y,w)                  % returns weighted correlation matrix of Y weighted by w
+% 		[~,p] = weightedcorrs(Y,w)              % returns p-values of the weighted correlation coefficients
+% 		[~,~,wcov] = weightedcorrs(Y,w)         % returns weighted covariance of Y weighted by w normalized to number of observations (nobs)
+% 		[~,~,~,wstd] = weightedcorrs(Y,w)       % returns weighted standard deviations of Y weighted by w normalized to nobs
+% 		[~,~,~,~,wmean] = weightedcorrs(Y,w)    % returns weighted means of Y weighted by w
+% 		[~,~,wcov,wstd] = weightedcorrs(Y)      % returns unweighted covariance and standard deviations normalized to nobs-1 (same as std(Y) and cov(Y))
+% 		[~,~,wcov,wstd] = weightedcorrs(Y,0)    % returns unweighted covariance and standard deviations normalized to nobs-1 (same as std(Y,0) and cov(Y,0))
+% 		[~,~,wcov,wstd] = weightedcorrs(Y,1)    % returns unweighted covariance and standard deviations normalized to nobs (same as std(Y,1) and cov(Y,1)
 %
 %   weightedcorrs returns a symmetric matrix R of weighted Pearson correlation
 %   coefficients calculated from an input nobs-by-nvar matrix Y whose rows are
