@@ -17,6 +17,8 @@ As an alternative, you can also download weightedcorrs.py from github and add it
 
 # Syntax for MATLAB
 
+SYNTAX:
+
 -	[R,p,wcov,wstd,wmean] = weightedcorrs(Y,w)     returns all possible outputs
 
 List of outputs:
@@ -38,6 +40,8 @@ Input of w is optional. If w=0, 1, or is omitted, then the function assigns w = 
 
 
 # Syntax for Google Colab, Jupyter Notebooks, and Python
+
+SYNTAX:
 
 - results = weightedcorrs(X)
 - results = weightedcorrs(X,w)
