@@ -155,27 +155,26 @@ print('weighted covariance matrix: ','\n',wcov,'\n')
 print('weighted standard deviations: ','\n',wstd,'\n')
 print('weighted means: ','\n',wmean)
 ```
-    weighted correlation coefficient matrix of X:  
-     [[1.         0.1554138  0.23071152]
-     [0.1554138  1.         0.51036961]
-     [0.23071152 0.51036961 1.        ]] 
+weighted correlation coefficient matrix of X:<br>  
+ [[1.         0.1554138  0.23071152]<br>
+ [0.1554138  1.         0.51036961]<br>
+ [0.23071152 0.51036961 1.        ]] <br>
 
-p-values of the correlation coefficients:
- [[0.00000000e+00 1.22589252e-01 2.09237757e-02]
- [1.22589252e-01 0.00000000e+00 5.81286900e-08]
- [2.09237757e-02 5.81286900e-08 0.00000000e+00]] 
+p-values of the correlation coefficients:<br>
+ [[0.00000000e+00 1.22589252e-01 2.09237757e-02]<br>
+ [1.22589252e-01 0.00000000e+00 5.81286900e-08]<br>
+ [2.09237757e-02 5.81286900e-08 0.00000000e+00]] <br>
 
-weighted covariance matrix:
- [[683.62291955  27.48984917  41.78750454]
- [ 27.48984917  45.76662876  23.91817879]
- [ 41.78750454  23.91817879  47.9885557 ]] 
+weighted covariance matrix:<br>
+ [[683.62291955  27.48984917  41.78750454]<br>
+ [ 27.48984917  45.76662876  23.91817879]<br>
+ [ 41.78750454  23.91817879  47.9885557 ]] <br>
 
-weighted standard deviations: 
- [26.14618365  6.76510375  6.92737726] 
+weighted standard deviations:<br> 
+ [26.14618365  6.76510375  6.92737726]<br> 
 
-weighted means:
- [154.45297806 122.94801463  83.06426332]
-``
+weighted means:<br> 
+ [154.45297806 122.94801463  83.06426332]<br>
 
 # Reference: 
 
