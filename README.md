@@ -7,7 +7,7 @@ Download weightedcorrs.m from github and add it to your working directory or ses
 
 # Installation for Google Colab, Jupyter Notebooks, and Python
 
-First install weightedcorrs as follows with pip or !pip:,br>
+First install weightedcorrs as follows with pip or !pip:<br>
 ```pip install git+https://github.com/gjpelletier/weightedcorrs.git```<br> 
 Next import the weightedcorrs function as follows:<br>
 ```from weightedcorrs import weightedcorrs```<br>
