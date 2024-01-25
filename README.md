@@ -26,7 +26,7 @@ Adapted from weightedcorrs.m (Pozzi et al. 2012). Modified by Greg Pelletier 22-
 
 # Installation
 
-You can install weightedcorrs by running the following in your Jupyter notebook or terminal, or you can copy the code to your own project:
-```pip install git+https://github.com/gjpelletier/weightedcorrs.git``` 
-
+You can install weightedcorrs by running the following in your Jupyter notebook or terminal, or you can copy the code to your own project:<br>
+```pip install git+https://github.com/gjpelletier/weightedcorrs.git```<br> 
+```from weightedcorrs import weightedcorrs```
 
