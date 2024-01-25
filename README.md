@@ -61,7 +61,7 @@ Input of w is optional. If w=0, 1, or is omitted, then the function assigns w = 
 # Reference: 
 
 The mathematical formulas in matrix notation, together with
-the code, is also available in
+MATLAB code, is also available in
 F. Pozzi, T. Di Matteo, T. Aste,
 "Exponential smoothing weighted correlations",
 The European Physical Journal B, Volume 85, Issue 6, 2012.
