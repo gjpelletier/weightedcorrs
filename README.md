@@ -26,6 +26,6 @@ Adapted from weightedcorrs.m (Pozzi et al. 2012). Modified by Greg Pelletier 22-
 
 # Installation
 
-You can install weightedcorrs by running ''' pip install git+https://github.com/matthijsz/weightedcorr.git ''' in your notebook or terminal, or you can copy the code to your own project.
+You can install weightedcorrs by running ```pip install git+https://github.com/matthijsz/weightedcorr.git``` in your notebook or terminal, or you can copy the code to your own project.
 
 
