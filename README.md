@@ -95,6 +95,8 @@ Now we are ready to show an example of doing an analysis of some data using weig
 
 Note that weightedcorrs requires the first index of X to be rows of observations, and the second index to be columns of random variables.<br>
 ```
+# First we assign the arrays with the first index is random variables
+# and second index is observations (we will need to transpose X next):
 X = [np.array([176., 163., 131., 133., 119., 142., 142., 180., 183., 132., 128.,
         137., 174., 202., 129., 181., 191., 131., 179., 172., 133., 117.,
         137., 146., 123., 189., 143., 114., 166., 186., 126., 137., 138.,
@@ -123,7 +125,8 @@ X = [np.array([176., 163., 131., 133., 119., 142., 142., 180., 183., 132., 128.,
         80., 79., 82., 79., 82., 75., 91., 74., 78., 85., 84., 75., 78.,
         81., 79., 85., 79., 82., 80., 80., 92., 92., 96., 87., 81., 90.,
         77., 91., 79., 73., 99., 92., 74., 93., 86.])]
-# transpose X so that the first index is rows of observations (nobs), and the second index is columns of random variables (nvar)
+# Next we transpose X so that the first index is rows of observations (nobs),
+# and the second index is columns of random variables (nvar)
 X = np.transpose(X)
 ```
 
