@@ -125,6 +125,7 @@ X = [np.array([176., 163., 131., 133., 119., 142., 142., 180., 183., 132., 128.,
         80., 79., 82., 79., 82., 75., 91., 74., 78., 85., 84., 75., 78.,
         81., 79., 85., 79., 82., 80., 80., 92., 92., 96., 87., 81., 90.,
         77., 91., 79., 73., 99., 92., 74., 93., 86.])]
+
 # Next we transpose X so that the first index is rows of observations (nobs),
 # and the second index is columns of random variables (nvar)
 X = np.transpose(X)
