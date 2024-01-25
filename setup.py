@@ -8,5 +8,5 @@ setup(
     version=__version__,
     author='Greg Pelletier',
     py_modules=['weightedcorrs'], 
-    install_requires=['numpy','numpy.matlib','scipy.stats','sys'],
+    install_requires=['numpy','scipy','sys'],
 )
