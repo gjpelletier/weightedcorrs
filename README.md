@@ -41,7 +41,6 @@ Input of w is optional. If w=0, 1, or is omitted, then the function assigns w = 
 
 SYNTAX:
 
-- results = weightedcorrs(X)
 - results = weightedcorrs(X,w)
 
 weightedcorrs returns a results dictionary that contains the following outputs: R, p, wcov, wstd, and wmean.
