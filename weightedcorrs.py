@@ -5,7 +5,7 @@ import numpy as np
 import numpy.matlib
 import scipy.stats
 
-__version__ = "1.0.1"
+__version__ = "1.0.7"
 
 def weightedcorrs(X,w=0):
 
