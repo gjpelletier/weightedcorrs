@@ -19,7 +19,7 @@ As an alternative, you can also download weightedcorrs.py from this github repos
 
 SYNTAX:
 
--	[R,p,wcov,wstd,wmean] = weightedcorrs(Y,w)     returns all possible outputs
+-	[R,p,wcov,wstd,wmean] = weightedcorrs(X,w)     returns all possible outputs
 
 List of outputs:
 
@@ -33,7 +33,7 @@ List of outputs:
 
 - 'wmean' is the output of the weighted means
 
-Input of w is optional. If w=0, 1, or is omitted, then the function assigns w = np.ones(nobs). If w=0 or omitted, then the covariance and standard deviations are unweighted and normalizd to nobs-1, and the means are unweighted. If w=1, then the covariance and standard deviations are unweighted and normlizd to nobs, and the means are unweighted. Otherwise, if w is an input vector of weights, then results are normalized to nobs for output of standard deviations and covariance, and the means are weighted by w. If w=0 or omitted, or if the input vector of w = ones(nobs,1), then there is no difference between weightedcorrs(Y, w) and corrcoef(Y).
+Input of w is optional. If w=0, 1, or is omitted, then the function assigns w = np.ones(nobs). If w=0 or omitted, then the covariance and standard deviations are unweighted and normalizd to nobs-1, and the means are unweighted. If w=1, then the covariance and standard deviations are unweighted and normlizd to nobs, and the means are unweighted. Otherwise, if w is an input vector of weights, then results are normalized to nobs for output of standard deviations and covariance, and the means are weighted by w. If w=0 or omitted, or if the input vector of w = ones(nobs,1), then there is no difference between weightedcorrs(X, w) and corrcoef(X).
 
 
 
@@ -56,7 +56,7 @@ results['wstd'] is the output of the weighted standard deviations
 
 results['wmean'] is the output of the weighted means
 
-Input of w is optional. If w=0, 1, or is omitted, then the function assigns w = np.ones(nobs). If w=0 or omitted, then the covariance and standard deviations are unweighted and normalizd to nobs-1, and the means are unweighted. If w=1, then the covariance and standard deviations are unweighted and normlizd to nobs, and the means are unweighted. Otherwise, if w is an input vector of weights, then results are normalized to nobs for output of standard deviations and covariance, and the means are weighted by w. If w=0 or omitted, or if the input vector of w = np.ones(nobs), then there is no difference between weightedcorrs(Y, w) and np.corrcoef(X,rowvar=False).
+Input of w is optional. If w=0, 1, or is omitted, then the function assigns w = np.ones(nobs). If w=0 or omitted, then the covariance and standard deviations are unweighted and normalizd to nobs-1, and the means are unweighted. If w=1, then the covariance and standard deviations are unweighted and normlizd to nobs, and the means are unweighted. Otherwise, if w is an input vector of weights, then results are normalized to nobs for output of standard deviations and covariance, and the means are weighted by w. If w=0 or omitted, or if the input vector of w = np.ones(nobs), then there is no difference between weightedcorrs(X, w) and np.corrcoef(X,rowvar=False).
 
 # Reference: 
 
