@@ -10,7 +10,7 @@ Download weightedcorrs.m from this github repository (https://github.com/gjpelle
 First install weightedcorrs as follows with pip or !pip:<br>
 ```pip install git+https://github.com/gjpelletier/weightedcorrs.git```<br> 
 
-Next import the weightedcorrs function as follows:<br>
+Next import the weightedcorrs function as follows in your notebook or python code:<br>
 ```from weightedcorrs import weightedcorrs```<br>
 
 As an alternative, you can also download weightedcorrs.py from this github repository (https://github.com/gjpelletier/weightedcorrs) and add it to your own project.<br>
