@@ -19,7 +19,7 @@ As an alternative, you can also download weightedcorrs.py from this github repos
 
 SYNTAX:
 
--	[R,p,wcov,wstd,wmean] = weightedcorrs(X,w)     returns all possible outputs
+-	[R,p,wcov,wstd,wmean] = weightedcorrs(X,w)   
 
 List of outputs:
 
