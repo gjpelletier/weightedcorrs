@@ -84,7 +84,7 @@ wstd =<br>
 wmean =<br>
    1.5445e+02   1.2295e+02   8.3064e+01<br>
 
-# Example for Google Colab or Jupyter Notebook
+# Example for Google Colab, Jupyter Notebook, and Python
 
 The first step is to install weightedcorrs from github as follows:<br>
 ```
