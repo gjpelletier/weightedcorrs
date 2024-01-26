@@ -87,7 +87,9 @@ wmean =<br>
 # Example for Google Colab or Jupyter Notebook
 
 The first step is to install weightedcorrs from github as follows:<br>
-```!pip install git+https://github.com/gjpelletier/weightedcorrs.git```
+```
+!pip install git+https://github.com/gjpelletier/weightedcorrs.git
+```
 
 Next we need to import the weightedcorrs function and numpy as follows:<br>
 ```
