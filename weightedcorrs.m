@@ -1,6 +1,8 @@
 
 function [R,p,wcov,wstd,wmean] = weightedcorrs(Y, w)
 
+% version 1.0.7
+% - - -
 %	Weighted correlation coefficients, covariance, and standard deviations
 %
 % 	SYNTAX
