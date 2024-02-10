@@ -5,7 +5,7 @@ Python, Jupyter notebook, and MATLAB function to calculate weighted correlation 
 
 Download the weightedcorrs.m file from this github repository (https://github.com/gjpelletier/weightedcorrs) or MATLAB File Exchange and copy it to your working directory or session search path folder.<br>
 
-# Installation for Google Colab, Jupyter Notebooks, and Python
+# Installation for Python, Jupyter Notebook, and Google Colab
 
 First install weightedcorrs as follows with pip or !pip in your notebook or terminal:<br>
 ```
